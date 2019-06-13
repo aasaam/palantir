@@ -24,7 +24,6 @@ pub struct PalantirProxy<'a> {
     timeout: Duration,
 }
 
-
 impl<'a> PalantirProxy<'a> {
 
     pub fn new(forward_url: &'a str) -> PalantirProxy<'a> {
@@ -85,4 +84,5 @@ impl<'a> PalantirProxy<'a> {
                         back_rsp
                     })
     }
+    
 }

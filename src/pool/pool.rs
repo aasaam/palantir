@@ -9,7 +9,6 @@
 //! caching, and health check; and also prevents DDOS and reports metrics 
 //! concerning health status of backend servers.
 //! 
-
 enum Message {
     NewJob(Job),
     Terminate,

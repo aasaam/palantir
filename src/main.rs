@@ -35,6 +35,7 @@ fn palantir_one(req: actix_web::HttpRequest) ->
 
 fn main() {
     let pool = ThreadPool::new(7000);
+    
     pool.execute(|| {
         actix_web::server::new(|| actix_web::App::new()
         .resource("/", |r| r.with_async(palantir_one))
