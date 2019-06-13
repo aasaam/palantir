@@ -1,4 +1,4 @@
-palantir <img src="palantir.svg?sanitize=true" align="right" width="120" />
+palantir <img src="https://raw.githubusercontent.com/AASAAM/palantir/master/palantir.svg?sanitize=true" align="right" width="120" />
 =====
 
 **palantir is a HTTP REST API reverse proxy**. It performs load balance, caching, and health check, and also prevents DDOS and reports metrics concerning health status of backend servers.
