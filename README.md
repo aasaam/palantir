@@ -31,6 +31,6 @@ This name has been chosen because:
   
 1. They may show something from the past (*i.e.,* cached data).
 
-1. They where designed to guard and unite humans' world, by obtaining information. This reverse proxy trys also to collect metrics and prevent DDOS in collaboration with other microservices.
+1. They where designed to guard and unite humans' world, by obtaining information. This reverse proxy tries also to collect metrics and prevent DDOS in collaboration with other microservices.
 
 1. *Palantíri* (plural of *palantír*), may mislead you since the health status of the message is not guaranteed *per se*. Much work is required for revealing the real health status of the upstream servers, which is going to be developed in **health module**.
