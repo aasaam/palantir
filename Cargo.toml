@@ -1,0 +1,43 @@
+[package]
+name = "palantir"
+version = "0.1.0"
+authors = [
+    "MaaniBeigy <manibeygi@gmail.com>", 
+    "AASAAM Software Group <info@aasaam.com>",
+]
+description = "HTTP REST API reverse proxy"
+readme = "README.md"
+license = "MIT/Apache-2.0"
+edition = "2018"
+homepage = ""
+repository = ""
+keywords = [
+    "proxy", 
+    "http", 
+    "rest", 
+    "api", 
+    "cache", 
+    "health check", 
+    "load balance",
+]
+categories = ["web-programming"]
+
+[badges]
+travis-ci = { repository = "", branch = "master" }
+coveralls = { repository = "", branch = "master", service = "github" }
+
+[features]
+default = []
+cache = []
+rwlock = []
+borrow = []
+fast = ['cache', 'rwlock', 'borrow']
+
+[[bin]]
+name = "palantir"
+path = "src/main.rs"
+doc = true
+
+[dependencies]
+actix-web = "0.7"
+futures = "0.1"
