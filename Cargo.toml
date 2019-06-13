@@ -39,5 +39,5 @@ path = "src/main.rs"
 doc = true
 
 [dependencies]
-actix-web = "0.7"
+actix-web = "1.0"
 futures = "0.1"
