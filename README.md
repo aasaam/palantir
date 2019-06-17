@@ -8,7 +8,7 @@
 
 # Getting started
 
-If you are using Linux or macOS, you need to install **Rust** using [rustup](<https://rustup.rs/>)
+If you are using Linux or macOS, you need to install **Rust** using [rustup](<https://rustup.rs/>):
 
 ```shell
 curl https://sh.rustup.rs -sSf | sh
