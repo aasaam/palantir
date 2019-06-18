@@ -9,8 +9,16 @@
 //! caching, and health check; and also prevents DDOS and reports metrics 
 //! concerning health status of backend servers.
 //! 
-// ----------------------------- bring Modules -------------------------------
-mod defaults;
-pub mod config;
-pub mod logger;
-pub mod reader;
+// ------------------ bring external functions/traits -------------------------
+// -------------------- Default configuration functions -----------------------
+pub fn palantir_log_level() -> String {
+    "error".to_string()
+}
+
+pub fn palantir_inet() -> String {
+    "0.0.0.0:8080".to_string()
+}
+
+pub fn upstream_inet() -> String {
+    "http://127.0.0.1:9002".to_string()
+}
