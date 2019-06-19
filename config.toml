@@ -1,0 +1,14 @@
+# palantir
+# HTTP REST API reverse proxy
+# Configuration file
+
+[palantir]
+
+log_level = "error"
+inet = "0.0.0.0:8080"
+
+
+[upstream]
+
+inet = "http://127.0.0.1:9002"
+timeout = 1
