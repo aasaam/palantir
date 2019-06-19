@@ -10,7 +10,7 @@
 //! concerning health status of backend servers.
 //! 
 // ------------------ bring external functions/traits -------------------------
-use std::net::SocketAddr;
+// use std::net::SocketAddr;
 use serde::Deserialize;
 // ------------------ bring internal functions/traits -------------------------
 use super::defaults;
@@ -24,6 +24,8 @@ pub struct Config {
 pub struct ConfigUpstream {
     #[serde(default = "defaults::upstream_inet")]
     pub inet: String,
+     #[serde(default = "defaults::upstream_timeout")]
+    pub timeout: u64,
 }
 #[derive(Deserialize)]
 pub struct ConfigPalantir {

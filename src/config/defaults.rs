@@ -22,3 +22,7 @@ pub fn palantir_inet() -> String {
 pub fn upstream_inet() -> String {
     "http://127.0.0.1:9002".to_string()
 }
+
+pub fn upstream_timeout() -> u64 {
+    5
+}

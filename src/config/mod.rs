@@ -10,7 +10,7 @@
 //! concerning health status of backend servers.
 //! 
 // ----------------------------- bring Modules -------------------------------
-mod defaults;
+pub mod defaults;
 pub mod config;
 pub mod logger;
 pub mod reader;

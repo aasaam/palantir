@@ -11,7 +11,7 @@
 //! 
 // ----------------------------- bring Modules --------------------------------
 mod proxy;
-mod pool;
+// mod pool;
 mod config;
 // mod health;
 // mod cache;
@@ -26,8 +26,8 @@ extern crate log;
 extern crate clap;
 #[macro_use]
 extern crate lazy_static;
-#[macro_use]
-extern crate serde_derive;
+// #[macro_use]
+// extern crate serde_derive;
 extern crate toml;
 // ------------------ bring external functions/traits -------------------------
 use std::time::Duration;
@@ -64,7 +64,7 @@ fn make_app_args() -> AppArgs {
                 .short("c")
                 .long("config")
                 .help("Path to configuration file")
-                .default_value("./config.cfg")
+                .default_value("./config.toml")
                 .takes_value(true),
         )
         .get_matches();
@@ -86,7 +86,7 @@ fn palantir_one(req: actix_web::HttpRequest) ->
         let proxaddr: String = APP_CONF.upstream.inet.to_owned();
         let proxaddr_slice: &str = &proxaddr[..];
         PalantirProxy::new(proxaddr_slice)
-            .timeout(Duration::from_secs(1))
+            .timeout(Duration::from_secs(APP_CONF.upstream.timeout))
             .forward(req)
     }
 

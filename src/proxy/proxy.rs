@@ -16,8 +16,7 @@ extern crate futures;
 use actix_web::{HttpRequest, HttpResponse, HttpMessage, client};
 use futures::{Stream, Future};
 use std::time::Duration;
-
-static DEFAULT_TIMEOUT: Duration = Duration::from_secs(5);
+use crate::config::defaults;
 
 pub struct PalantirProxy<'a> {
     forward_url: &'a str,
@@ -27,7 +26,10 @@ pub struct PalantirProxy<'a> {
 impl<'a> PalantirProxy<'a> {
 
     pub fn new(forward_url: &'a str) -> PalantirProxy<'a> {
-        PalantirProxy{ forward_url, timeout: DEFAULT_TIMEOUT }
+        PalantirProxy{ 
+            forward_url, 
+            timeout: Duration::from_secs(defaults::upstream_timeout()) 
+            }
     }
 
     pub fn timeout(mut self, duration: Duration) -> PalantirProxy<'a> {
