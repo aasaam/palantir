@@ -4,7 +4,7 @@ dist: ubuntu
 os:
   - linux
   - osx
-sudo: true
+sudo: false
 
 rust:
   - stable
