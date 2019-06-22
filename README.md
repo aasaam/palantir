@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/MaaniBeigy/palantir.svg?branch=master)](<https://travis-ci.org/MaaniBeigy/palantir>)
+
 <img src="./palantir.svg" align="right" width="192" />
 
 # palantir
