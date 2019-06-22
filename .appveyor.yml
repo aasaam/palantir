@@ -4,6 +4,7 @@ environment:
   - TARGET: i686-pc-windows-msvc
   - TARGET: x86_64-pc-windows-gnu
   - TARGET: i686-pc-windows-gnu
+    GCC_PATH: gcc-4.6.3
   RUST_BACKTRACE: full
 install:
   - curl -sSf -o rustup-init.exe https://win.rustup.rs/
