@@ -22,7 +22,7 @@ If you are using Linux or macOS, you need to install **Rust** using [rustup](<ht
 curl https://sh.rustup.rs -sSf | sh
 ```
 
-For installation on Windows, read the instruction in [rust-lang book](<https://doc.rust-lang.org/book/ch01-01-installation.html#installing-rustup-on-windows>)
+For installation on Windows, read the instruction in [rust-lang book](<https://doc.rust-lang.org/book/ch01-01-installation.html#installing-rustup-on-windows>).
 
 ### License
 
