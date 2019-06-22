@@ -1,4 +1,12 @@
 [![Build Status](https://travis-ci.org/AASAAM/palantir.svg?branch=master)](<https://travis-ci.org/AASAAM/palantir>)
+[![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/d1cmo37ht3mbha38/branch/master?svg=true)](https://ci.appveyor.com/project/MaaniBeigy/palantir-isq74/branch/master)
+[![License: MIT/Apache-2.0](<https://img.shields.io/badge/license-MIT%2FApache--2.0-brightgreen.svg>)](#license)
+![GitHub last commit](https://img.shields.io/github/last-commit/AASAAM/palantir.svg?color=brightgreen)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AASAAM/palantir.svg?color=brightgreen)
+[![](<https://img.shields.io/badge/devel%20version-0.1.0-yellow.svg>)](<https://github.com/AASAAM/palantir>)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![contributions welcome](<https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat>)](<https://github.com/AASAAM/palantir/issues>)
+=======
 
 <img src="./palantir.svg" align="right" width="192" />
 
@@ -16,7 +24,7 @@ If you are using Linux or macOS, you need to install **Rust** using [rustup](<ht
 curl https://sh.rustup.rs -sSf | sh
 ```
 
-For installation on Windows, read the instruction in [rust-lang book](<https://doc.rust-lang.org/book/ch01-01-installation.html#installing-rustup-on-windows>)
+For installation on Windows, read the instruction in [rust-lang book](<https://doc.rust-lang.org/book/ch01-01-installation.html#installing-rustup-on-windows>).
 
 ### License
 
