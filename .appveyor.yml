@@ -6,12 +6,17 @@ environment:
   - TARGET: i686-pc-windows-gnu
   RUST_BACKTRACE: full
 install:
-  - curl -sSf -o rustup-init.exe https://win.rustup.rs/
-  - rustup-init.exe -y --default-host %TARGET%
+  - curl -sSf -o rustup-init.exe https://win.rustup.rs
+  - rustup-init.exe --default-host %TARGET% --default-toolchain %CHANNEL% -y
   - set PATH=%PATH%;C:\Users\appveyor\.cargo\bin
-  - rustc -vV
-  - cargo -vV
+  - rustc -Vv
+  - cargo -V
 build: false
+matrix:
+  fast_finish: true
 test_script:
-  - cargo build --verbose --features yaml
-  - cargo test --verbose --features yaml
+  - cargo build
+  - cargo test -p palantir
+branches:
+  only:
+    - master
