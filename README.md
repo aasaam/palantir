@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/MaaniBeigy/palantir.svg?branch=master)](<https://travis-ci.org/MaaniBeigy/palantir>)
+[![Build Status](https://travis-ci.org/AASAAM/palantir.svg?branch=master)](<https://travis-ci.org/AASAAM/palantir>)
 
 <img src="./palantir.svg" align="right" width="192" />
 
