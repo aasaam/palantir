@@ -31,7 +31,7 @@ default = []
 cache = []
 rwlock = []
 borrow = []
-fast = ['cache', 'rwlock', 'borrow']
+fast = ["cache", "rwlock", "borrow"]
 
 [[bin]]
 name = "palantir"
@@ -39,12 +39,13 @@ path = "src/main.rs"
 doc = true
 
 [dependencies]
-log = { version = "0.4.5", features = ["std"] }
+hyper = "0.12.31"
+log = { version = "0.4.6", features = ["std"] }
 lazy_static = "1.3.0"
 dotenv = "0.14.1"
-actix-web = "0.7.0"
-futures = "0.1"
+actix-web = { version = "0.7.18", features = ["alpn"] }
+futures = "0.1.28"
 clap = "2.33.0"
-serde = { version = "1.0", features = ["derive"] }
-serde_derive = '1.0'
+serde = { version = "1.0.94", features = ["derive"] }
+serde_derive = "1.0.94"
 toml = "0.5.1"

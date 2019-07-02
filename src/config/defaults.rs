@@ -11,18 +11,19 @@
 //! 
 // ------------------ bring external functions/traits -------------------------
 // -------------------- Default configuration functions -----------------------
+/// Determines default log level
 pub fn palantir_log_level() -> String {
     "error".to_string()
 }
-
+/// Determines default reverse proxy address
 pub fn palantir_inet() -> String {
     "0.0.0.0:8080".to_string()
 }
-
+/// Determines default upstream address
 pub fn upstream_inet() -> String {
     "http://127.0.0.1:9002".to_string()
 }
-
+/// Determines default upstream timeout
 pub fn upstream_timeout() -> u64 {
     5
 }

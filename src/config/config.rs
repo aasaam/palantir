@@ -15,11 +15,13 @@ use serde::Deserialize;
 // ------------------ bring internal functions/traits -------------------------
 use super::defaults;
 // -------------------------- Configuration structs ---------------------------
+/// Config Struct
 #[derive(Deserialize)]
 pub struct Config {
     pub upstream: ConfigUpstream,
     pub palantir: ConfigPalantir,
 }
+/// Upstream Config Struct
 #[derive(Deserialize)]
 pub struct ConfigUpstream {
     #[serde(default = "defaults::upstream_inet")]
@@ -27,6 +29,7 @@ pub struct ConfigUpstream {
      #[serde(default = "defaults::upstream_timeout")]
     pub timeout: u64,
 }
+/// Reverse Proxy Config Struct
 #[derive(Deserialize)]
 pub struct ConfigPalantir {
     #[serde(default = "defaults::palantir_log_level")]

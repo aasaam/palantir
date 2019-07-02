@@ -30,7 +30,6 @@ impl<F: FnOnce()> FnBox for F {
 }
 
 struct Worker {
-    //id: usize,
     thread: Option<std::thread::JoinHandle<()>>,
 }
 
@@ -42,7 +41,7 @@ impl ThreadPool {
         let (sender, receiver) = std::sync::mpsc::channel();
         let receiver = std::sync::Arc::new(std::sync::Mutex::new(receiver));
         let mut workers = Vec::with_capacity(size);
-        for id in 0..size {
+        for _ in 0..size {
             workers.push(Worker::new(std::sync::Arc::clone(&receiver)));
         }
         ThreadPool {

@@ -13,13 +13,15 @@
 extern crate log;
 use log::{Level, LevelFilter, Metadata, Record, SetLoggerError};
 // -------------------- Configuration log structs/traits ----------------------
+/// ConfigLogger struct
 pub struct ConfigLogger;
 
 impl log::Log for ConfigLogger {
+    /// Enabling Debug log level
     fn enabled(&self, metadata: &Metadata) -> bool {
         metadata.level() <= Level::Debug
     }
-
+    /// Recording logs and printing
     fn log(&self, record: &Record) {
         if self.enabled(record.metadata()) {
             println!("({}) - {}", record.level(), record.args());
@@ -28,7 +30,7 @@ impl log::Log for ConfigLogger {
 
     fn flush(&self) {}
 }
-
+/// Implementing ConfigLogger and setting it up 
 impl ConfigLogger {
     pub fn init(level: LevelFilter) -> Result<(), SetLoggerError> {
         log::set_max_level(level);
