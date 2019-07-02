@@ -11,7 +11,7 @@
 //! 
 // ----------------------------- bring Modules --------------------------------
 mod proxy;
-// mod pool;
+mod pool;
 mod config;
 // mod health;
 // mod cache;
@@ -26,8 +26,6 @@ extern crate log;
 extern crate clap;
 #[macro_use]
 extern crate lazy_static;
-// #[macro_use]
-// extern crate serde_derive;
 extern crate toml;
 // ------------------ bring external functions/traits -------------------------
 use std::time::Duration;
@@ -40,17 +38,17 @@ use proxy::proxy::PalantirProxy;
 use config::config::Config;
 use config::logger::ConfigLogger;
 use config::reader::ConfigReader;
-// use pool::pool::ThreadPool;
+use pool::pool::ThreadPool;
 // ---------------------- main functions of palantir --------------------------
-
+/// Application Arguments
 struct AppArgs {
     config: String,
 }
 
-pub static LINE_FEED: &'static str = "\r\n";
-
 lazy_static! {
+    /// Declaring lazily evaluated statics for app arguments
     static ref APP_ARGS: AppArgs = make_app_args();
+    /// Declaring lazily evaluated statics for app configurations
     static ref APP_CONF: Config = ConfigReader::make();
 }
 
@@ -71,36 +69,43 @@ fn make_app_args() -> AppArgs {
 
     // Generate owned app arguments
     AppArgs {
-        config: String::from(matches.value_of("config").expect("invalid config value")),
+        config: String::from(
+            matches.value_of("config").expect("invalid config value")
+            ),
     }
 }
 
-
+/// This function ensures all statics are valid (a `deref` is enough to lazily 
+/// initialize them)
 fn ensure_states() {
-    // Ensure all statics are valid (a `deref` is enough to lazily initialize them)
     let (_, _) = (APP_ARGS.deref(), APP_CONF.deref());
 }
-
-fn palantir_one(req: actix_web::HttpRequest) -> 
+/// This function connects to uppstream server and forwards url
+fn connect_upstream(req: actix_web::HttpRequest) -> 
     impl futures::Future<Item=actix_web::HttpResponse, Error=actix_web::Error> {
-        let proxaddr: String = APP_CONF.upstream.inet.to_owned();
-        let proxaddr_slice: &str = &proxaddr[..];
-        PalantirProxy::new(proxaddr_slice)
+
+        // This function makes a new PalantirProxy struct based on the config
+        PalantirProxy::new(&APP_CONF.upstream.inet.to_owned()[..])
             .timeout(Duration::from_secs(APP_CONF.upstream.timeout))
             .forward(req)
     }
 
+/// The main function running reverse proxy
 fn main() {
     let _logger = ConfigLogger::init(
-        LevelFilter::from_str(&APP_CONF.palantir.log_level).expect("invalid log level"),
+        LevelFilter::from_str(
+            &APP_CONF.palantir.log_level).expect("invalid log level"
+            ),
         );
     // Ensure all states are bound
     ensure_states();
-    actix_web::server::new(|| actix_web::App::new()
-        .resource("/", |r| r.with_async(palantir_one))
-        )
-        .bind(&APP_CONF.palantir.inet)
-        .unwrap()
-        .run();
-    
+    let pool = ThreadPool::new(1500);
+    pool.execute(|| {
+            actix_web::server::new(|| actix_web::App::new()
+                .resource("/", |r| r.with_async(connect_upstream))
+                )
+                .bind(&APP_CONF.palantir.inet)
+                .unwrap()
+                .run(); 
+    })
 }
