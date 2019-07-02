@@ -31,7 +31,7 @@ default = []
 cache = []
 rwlock = []
 borrow = []
-fast = ["cache", "rwlock", "borrow", "tokio-tls", "hyper-tls", "native-tls"]
+fast = ["cache", "rwlock", "borrow"]
 
 [[bin]]
 name = "palantir"
@@ -49,7 +49,3 @@ clap = "2.33.0"
 serde = { version = "1.0.94", features = ["derive"] }
 serde_derive = "1.0.94"
 toml = "0.5.1"
-tokio-tls = { version = "0.2", optional = true }
-hyper-tls = { version = "0.3", optional = true }
-native-tls = { version = "0.2", optional = true }
-openssl = { version = "0.10", features = ["v110"] }
