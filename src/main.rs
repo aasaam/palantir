@@ -85,7 +85,7 @@ fn connect_upstream(req: actix_web::HttpRequest) ->
     impl futures::Future<Item=actix_web::HttpResponse, Error=actix_web::Error> {
 
         // This function makes a new PalantirProxy struct based on the config
-        PalantirProxy::new(&APP_CONF.upstream.inet.to_owned())
+PalantirProxy::new(&APP_CONF.upstream.inet.to_owned())
             .timeout(Duration::from_secs(APP_CONF.upstream.timeout))
             .forward(req)
     }
