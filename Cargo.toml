@@ -9,8 +9,8 @@ description = "HTTP REST API reverse proxy"
 readme = "README.md"
 license = "MIT/Apache-2.0"
 edition = "2018"
-homepage = ""
-repository = ""
+homepage = "https://github.com/AASAAM/palantir"
+repository = "https://github.com/AASAAM/palantir.git"
 keywords = [
     "proxy", 
     "http", 
@@ -23,8 +23,13 @@ keywords = [
 categories = ["web-programming"]
 
 [badges]
-travis-ci = { repository = "", branch = "master" }
-coveralls = { repository = "", branch = "master", service = "github" }
+travis-ci = { repository = "AASAAM/palantir", branch = "master" }
+coveralls = { repository = "AASAAM/palantir", branch = "master", service = "github" }
+
+[[bin]]
+name = "palantir"
+path = "src/main.rs"
+doc = true
 
 [features]
 default = []
@@ -33,14 +38,9 @@ rwlock = []
 borrow = []
 fast = ["cache", "rwlock", "borrow"]
 
-[[bin]]
-name = "palantir"
-path = "src/main.rs"
-doc = true
-
 [dependencies]
-hyper = "0.12.31"
-log = { version = "0.4.6", features = ["std"] }
+hyper = "0.12.32"
+log = { version = "0.4.7", features = ["std"] }
 lazy_static = "1.3.0"
 dotenv = "0.14.1"
 actix-web = { version = "0.7.18", features = ["alpn"] }

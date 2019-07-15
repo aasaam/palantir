@@ -19,13 +19,13 @@ use std::time::Duration;
 use crate::config::defaults;
 /// PalantirProxy struct
 pub struct PalantirProxy<'a> {
-    forward_url: &'a str,
+    forward_url: &'a String,
     timeout: Duration,
 }
 
 impl<'a> PalantirProxy<'a> {
     /// Making a new PalantirProxy
-    pub fn new(forward_url: &'a str) -> PalantirProxy<'a> {
+    pub fn new(forward_url: &'a String) -> PalantirProxy<'a> {
         PalantirProxy{ 
             forward_url, 
             timeout: Duration::from_secs(defaults::upstream_timeout()) 
@@ -38,7 +38,7 @@ impl<'a> PalantirProxy<'a> {
     }
     /// forwarding uri
     fn forward_uri(&self, req: &HttpRequest) -> String {
-        let forward_url: &str = self.forward_url;
+        let forward_url: &String = self.forward_url;
 
         let forward_uri = match req.uri().query() {
             Some(query) => format!(
@@ -60,10 +60,10 @@ impl<'a> PalantirProxy<'a> {
 
         let forward_body = req.payload().from_err();
         let forward_req = forward_req
-                                    //.no_default_headers()
-                                    //.set_header_if_none(
-                                    //    actix_web::http::header::USER_AGENT, ""
-                                    //    )
+                                    .no_default_headers()
+                                    .set_header_if_none(
+                                        actix_web::http::header::USER_AGENT, ""
+                                        )
                                     .body(actix_web::Body::Streaming(
                                         Box::new(forward_body))
                                         )

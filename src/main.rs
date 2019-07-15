@@ -38,7 +38,7 @@ use proxy::proxy::PalantirProxy;
 use config::config::Config;
 use config::logger::ConfigLogger;
 use config::reader::ConfigReader;
-use pool::pool::ThreadPool;
+//use pool::pool::ThreadPool;
 // ---------------------- main functions of palantir --------------------------
 /// Application Arguments
 struct AppArgs {
@@ -85,7 +85,7 @@ fn connect_upstream(req: actix_web::HttpRequest) ->
     impl futures::Future<Item=actix_web::HttpResponse, Error=actix_web::Error> {
 
         // This function makes a new PalantirProxy struct based on the config
-        PalantirProxy::new(&APP_CONF.upstream.inet.to_owned()[..])
+        PalantirProxy::new(&APP_CONF.upstream.inet.to_owned())
             .timeout(Duration::from_secs(APP_CONF.upstream.timeout))
             .forward(req)
     }
@@ -99,13 +99,11 @@ fn main() {
         );
     // Ensure all states are bound
     ensure_states();
-    let pool = ThreadPool::new(1500);
-    pool.execute(|| {
-            actix_web::server::new(|| actix_web::App::new()
+        actix_web::server::new(
+            || actix_web::App::new()
                 .resource("/", |r| r.with_async(connect_upstream))
-                )
-                .bind(&APP_CONF.palantir.inet)
-                .unwrap()
-                .run(); 
-    })
+            )
+            .bind(&APP_CONF.palantir.inet)
+            .unwrap()
+            .run(); 
 }
