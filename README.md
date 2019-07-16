@@ -5,7 +5,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AASAAM/palantir.svg?color=brightgreen)
 [![](<https://img.shields.io/badge/devel%20version-0.1.0-yellow.svg>)](<https://github.com/AASAAM/palantir>)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![contributions welcome](<https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat>)](<https://github.com/AASAAM/palantir/issues>)
+[![contributions welcome](<https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat>)](<https://github.com/AASAAM/palantir/issues>) [![Join the chat at https://gitter.im/AASAAM/palantir](https://badges.gitter.im/AASAAM/palantir.svg)](https://gitter.im/AASAAM/palantir?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 =======
 
 <img src="./palantir.svg" align="right" width="192" />
