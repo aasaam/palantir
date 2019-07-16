@@ -28,9 +28,9 @@ sudo nano /etc/nginx/nginx.conf
 
 For benchmark, you are going to need to install [wrk](<https://github.com/wg/wrk/wiki/Installing-Wrk-on-Linux>).
 
-Finally, you are needed to pull the [palantir](<https://github.com/AASAAM/palantir>)
+Finally, you are needed to clone the [palantir](<https://github.com/AASAAM/palantir>)
  repository and use [config.toml](../config.toml)
-as it is provided to proxy the nginx upstream echo sever.
+as it is provided to proxy the nginx upstream echo server.
 
 ### Results
 
@@ -81,7 +81,7 @@ than a high-performance *nginx* configuration (17051 RPS).
 
 ### Memory
 
-palantir has a small RAM footprint (~0.2-1.1% which is ~28MB). 
+palantir has a small RAM footprint (~0.2-1.1% which is ~28MB).
 
 To check for **real-time memory usage** by palantir when **`wrk`** benchmark is running:
 
