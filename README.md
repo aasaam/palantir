@@ -27,7 +27,7 @@ curl https://sh.rustup.rs -sSf | sh
 
 For installation on Windows, read the instructions in [rust-lang book](<https://doc.rust-lang.org/book/ch01-01-installation.html#installing-rustup-on-windows>).
 
-Then, pull `palantir` repository:
+Then, clone `palantir` repository:
 
 ```shell
 git clone git@github.com:AASAAM/palantir.git
