@@ -57,7 +57,7 @@ palantir is inspired by [actix-reverse-proxy](<https://github.com/felipenoris/ac
 
 ### Contribution
 
-To contribute to palantir, please see [CONTRIBUTING](../CONTRIBUTING.md) and [CODE_OF_CONDUCT](./CODE_OF_CONDUCT.md).
+To contribute to palantir, please see [CONTRIBUTING](./CONTRIBUTING.md) and [CODE_OF_CONDUCT](./CODE_OF_CONDUCT.md).
 
 Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
 
