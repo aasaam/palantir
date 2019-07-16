@@ -6,17 +6,18 @@
 [![](<https://img.shields.io/badge/devel%20version-0.1.0-yellow.svg>)](<https://github.com/AASAAM/palantir>)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![contributions welcome](<https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat>)](<https://github.com/AASAAM/palantir/issues>)
+[![Gitter](https://badges.gitter.im/AASAAM/palantir.svg)](https://gitter.im/AASAAM/palantir?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 =======
 
 <img src="./palantir.svg" align="right" width="192" />
 
 # palantir
 
-**palantir is a HTTP REST API reverse proxy**. It performs load balance, caching, and health check, and also prevents DDOS and reports metrics concerning health status of backend servers.
+**palantir is a HTTP REST API reverse proxy**. It will perform load balance, caching, and health check. Also, it will prevent DDOS and will report metrics concerning health status of backend servers.
 
 **Important: palantir is still under development and is not ready**.
 
-# Getting started
+## Getting started
 
 If you are using Linux or macOS, you need to install **Rust** using [rustup](<https://rustup.rs/>):
 
@@ -24,7 +25,26 @@ If you are using Linux or macOS, you need to install **Rust** using [rustup](<ht
 curl https://sh.rustup.rs -sSf | sh
 ```
 
-For installation on Windows, read the instruction in [rust-lang book](<https://doc.rust-lang.org/book/ch01-01-installation.html#installing-rustup-on-windows>).
+For installation on Windows, read the instructions in [rust-lang book](<https://doc.rust-lang.org/book/ch01-01-installation.html#installing-rustup-on-windows>).
+
+Then, pull `palantir` repository:
+
+```shell
+git clone git@github.com:AASAAM/palantir.git
+```
+
+After modifying [config.toml](../config.toml) based on your upstream server:
+
+```shell
+cd palantir
+cargo run --release --features fast
+```
+
+### Performance
+
+palantir is built in Rust, so it can be compiled to native code for your architecture. Rust, unlike some languages such as Golang, does not have a garbage collector (GC) which constantly looks for no longer used memory while the program runs. Therefore, GC is usually a bad thing for high-throughput / high-load production systems. "In Rust, memory is handled through a system of ownership with a set of rules that the compiler checks at compile time. None of the ownership features slow down your program as it is running" [(reference)](<https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html?highlight=garbage,collector#memory-and-allocation>).
+
+In early [benchmarks](../../benches/README.md), we observed that palantir competes with the nginx reverse proxy.
 
 ### License
 
@@ -35,8 +55,9 @@ Licensed under either of
 
 palantir is inspired by [actix-reverse-proxy](<https://github.com/felipenoris/actix-reverse-proxy>), [bloom](<https://github.com/valeriansaliou/bloom>), [rustnish](<https://github.com/klausi/rustnish>), and [weldr](<https://github.com/hjr3/weldr>).
 
+### Contribution
 
-#### Contribution
+To contribute to palantir, please see [CONTRIBUTING](../CONTRIBUTING.md) and [CODE_OF_CONDUCT](./CODE_OF_CONDUCT.md).
 
 Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.
 
@@ -44,7 +65,7 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 
 **"But alone it could do nothing but see small images of things far off and days remote." <br/>*the Lord of the Rings*, *The Two Towers* by John R. R. Tolkien**
 
-The proxy's name *palantír* is derived from *the Lord of the Rings*, which is an artefact "used for both communication and as a means of seeing events in other parts of the world or in the distant past    or in the future" [Palantír](<https://en.wikipedia.org/wiki/Palant%C3%ADr>).
+The proxy's name *palantír* is derived from *the Lord of the Rings*, which is an artefact "used for both communication and as a means of seeing events in other parts of the world or in the distant past    or in the future" [(reference)](<https://en.wikipedia.org/wiki/Palant%C3%ADr>).
 
 This name has been chosen because:
 
