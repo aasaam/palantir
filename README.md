@@ -33,7 +33,7 @@ Then, clone `palantir` repository:
 git clone git@github.com:AASAAM/palantir.git
 ```
 
-After modifying [config.toml](../config.toml) based on your upstream server:
+After modifying [config.toml](./config.toml) based on your upstream server:
 
 ```shell
 cd palantir
@@ -44,7 +44,7 @@ cargo run --release --features fast
 
 palantir is built in Rust, so it can be compiled to native code for your architecture. Rust, unlike some languages such as Golang, does not have a garbage collector (GC) which constantly looks for no longer used memory while the program runs. Therefore, GC is usually a bad thing for high-throughput / high-load production systems. "In Rust, memory is handled through a system of ownership with a set of rules that the compiler checks at compile time. None of the ownership features slow down your program as it is running" [(reference)](<https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html?highlight=garbage,collector#memory-and-allocation>).
 
-In early [benchmarks](../../benches/README.md), we observed that palantir competes with the nginx reverse proxy.
+In early [benchmarks](./benches/README.md), we observed that palantir competes with the nginx reverse proxy.
 
 ### License
 
