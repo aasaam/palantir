@@ -1,0 +1,17 @@
+# This is /etc/nginx/sites-available/default sample file for benchmarks with nginx
+# Upstream server (echo server)
+server {
+        listen 9061;
+        location / {
+                add_header 'content-type' 'text/plain';
+                echo "hello, world!";
+        }
+}
+# Reverse proxy made by nginx
+server {
+        listen 9065;
+    location / {
+        proxy_pass http://127.0.0.1:9061;
+    }
+
+}
