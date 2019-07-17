@@ -6,11 +6,35 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    id="svg8"
    version="1.1"
    viewBox="0 0 69.752251 58.532024"
    height="58.532024mm"
-   width="69.752251mm">
+   width="69.752251mm"
+   sodipodi:docname="palantir.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1299"
+     inkscape:window-height="713"
+     id="namedview28"
+     showgrid="false"
+     inkscape:zoom="1.0667949"
+     inkscape:cx="-31.758804"
+     inkscape:cy="110.6117"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
   <defs
      id="defs2">
     <marker
@@ -149,4 +173,15 @@
          x="120.83897"
          id="tspan53911">palantir</tspan></text>
   </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+     x="28.025927"
+     y="31.746183"
+     id="text873"><tspan
+       sodipodi:role="line"
+       id="tspan871"
+       x="28.025927"
+       y="31.746183"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.39999962px;font-family:'Vazir Code';-inkscape-font-specification:'Vazir Code';fill:#2aa198;fill-opacity:1;stroke-width:0.26458332">x</tspan></text>
 </svg>
