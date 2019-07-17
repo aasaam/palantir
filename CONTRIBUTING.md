@@ -121,3 +121,5 @@ review and approval from at least one member of the `palantir` development team
 before merge.
 
 Finally, remember that `palantir` is an in-development crate. We honorably welcome pull requests and contributions.
+
+The AASAAM Project Developers (2019-2020)
