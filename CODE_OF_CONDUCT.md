@@ -77,3 +77,5 @@ version 1.4, available at
 
 For answers to common questions about this code of conduct, see
 <https://www.contributor-covenant.org/faq>
+
+The AASAAM Project Developers (2019-2020)
