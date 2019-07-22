@@ -9,6 +9,4 @@
 //! caching, and health check; and also prevents DDOS and reports metrics 
 //! concerning health status of backend servers.
 //! 
-// ----------------------------- bring Modules ---------------------------------
-pub mod proxy;
-pub mod tests;
+// ------------------ bring external libraries/crates -------------------------

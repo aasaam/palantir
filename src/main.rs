@@ -11,7 +11,7 @@
 //! 
 // ----------------------------- bring Modules --------------------------------
 mod proxy;
-mod pool;
+// mod pool;
 mod config;
 // mod health;
 // mod cache;
