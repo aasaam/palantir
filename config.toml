@@ -10,5 +10,5 @@ inet = "0.0.0.0:8080"
 
 [upstream]
 
-inet = "http://127.0.0.1:9061"
+inet = "https://127.0.0.1:9062"
 timeout = 1
