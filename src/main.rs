@@ -101,7 +101,7 @@ fn main() {
     ensure_states();
         actix_web::server::new(
             || actix_web::App::new()
-                .resource("/", |r| r.with_async(connect_upstream))
+                .resource("/{tail:.*}", |r| r.with_async(connect_upstream))
             )
             .bind(&APP_CONF.palantir.inet)
             .unwrap()
