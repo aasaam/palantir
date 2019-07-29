@@ -15,21 +15,23 @@ use std::io::Read;
 use toml;
 // ------------------ bring internal functions/traits -------------------------
 use super::config::*;
-use crate::APP_ARGS;
+use crate::connect::appargs;
 
 pub struct ConfigReader;
 
 impl ConfigReader {
     pub fn make() -> Config {
-        debug!("reading config file: {}", &APP_ARGS.config);
+        debug!("reading config file: {}", &appargs::APP_ARGS.config);
 
-        let mut file = File::open(&APP_ARGS.config).expect("cannot find config file");
+        let mut file = File::open(&appargs::APP_ARGS.config).expect(
+            "cannot find config file"
+            );
         let mut conf = String::new();
 
         file.read_to_string(&mut conf)
             .expect("cannot read config file");
 
-        debug!("read config file: {}", &APP_ARGS.config);
+        debug!("read config file: {}", &appargs::APP_ARGS.config);
 
         toml::de::from_str(&conf).expect("syntax error in config file")
     }
