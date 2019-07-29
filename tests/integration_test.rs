@@ -10,3 +10,11 @@
 //! concerning health status of backend servers.
 //! 
 // ------------------ bring external libraries/crates -------------------------
+//use actix_web::test::TestServer;
+//use crate::connect_upstream;
+//fn main() {
+//    let mut srv = TestServer::new(|app| app.handler(connect_upstream));
+//    let req = srv.get().finish().unwrap();
+//    let response = srv.execute(req.send()).unwrap();
+//    assert!(response.status().is_success());
+//}

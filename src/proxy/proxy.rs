@@ -39,7 +39,6 @@ pub fn new(forward_url: &'a String) -> PalantirProxy<'a> {
     /// forwarding uri
     fn forward_uri(&self, req: &HttpRequest) -> String {
         let forward_url: &String = self.forward_url;
-
         let forward_uri = match req.uri().query() {
             Some(query) => format!(
                 "{}{}?{}", forward_url, req.uri().path(), query
