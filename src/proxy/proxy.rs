@@ -19,8 +19,8 @@ use std::time::Duration;
 use crate::config::defaults;
 /// PalantirProxy struct
 pub struct PalantirProxy<'a> {
-    forward_url: &'a String,
-    timeout: Duration,
+    pub forward_url: &'a String,
+    pub timeout: Duration,
 }
 
 impl<'a> PalantirProxy<'a> {
@@ -32,12 +32,12 @@ pub fn new(forward_url: &'a String) -> PalantirProxy<'a> {
             }
     }
     /// Implementing timeout
-    pub fn timeout(mut self, duration: Duration) -> PalantirProxy<'a> {
+pub fn timeout(mut self, duration: Duration) -> PalantirProxy<'a> {
         self.timeout = duration;
         self
     }
     /// forwarding uri
-    fn forward_uri(&self, req: &HttpRequest) -> String {
+pub fn forward_uri(&self, req: &HttpRequest) -> String {
         let forward_url: &String = self.forward_url;
         let forward_uri = match req.uri().query() {
             Some(query) => format!(
@@ -51,7 +51,7 @@ pub fn new(forward_url: &'a String) -> PalantirProxy<'a> {
         forward_uri
     }
     /// Forwarding HTTP request
-    pub fn forward(&self, req: HttpRequest) -> 
+pub fn forward(&self, req: HttpRequest) -> 
         impl Future<Item=actix_web::HttpResponse, Error=actix_web::Error>  {
 
         let mut forward_req = client::ClientRequest::build_from(&req);

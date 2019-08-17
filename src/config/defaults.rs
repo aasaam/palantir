@@ -19,6 +19,10 @@ pub fn palantir_log_level() -> String {
 pub fn palantir_inet() -> String {
     "0.0.0.0:8080".to_string()
 }
+/// Determines default reverse proxy workers
+pub fn palantir_workers() -> usize {
+    1
+}
 /// Determines default upstream address
 pub fn upstream_inet() -> String {
     "http://127.0.0.1:9002".to_string()

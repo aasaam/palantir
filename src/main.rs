@@ -13,7 +13,7 @@
 mod proxy;
 // mod pool;
 mod config;
-mod connect;
+mod connection;
 // mod health;
 // mod cache;
 // mod header;
@@ -34,8 +34,8 @@ use std::str::FromStr;
 use log::LevelFilter;
 // ------------------ bring internal functions/traits -------------------------
 use config::logger::ConfigLogger;
-use connect::connection::connect_upstream;
-use connect::appargs;
+use connection::connection::connect_upstream;
+use connection::appargs;
 //use pool::pool::ThreadPool;
 // ---------------------- main functions of palantir --------------------------
 /// This function ensures all statics are valid (a `deref` is enough to lazily 
@@ -59,5 +59,7 @@ fn main() {
             )
             .bind(&appargs::APP_CONF.palantir.inet)
             .unwrap()
+            .workers(appargs::APP_CONF.palantir.workers)
             .run(); 
+    
 }

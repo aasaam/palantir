@@ -26,10 +26,6 @@ categories = ["web-programming"]
 travis-ci = { repository = "AASAAM/palantir", branch = "master" }
 coveralls = { repository = "AASAAM/palantir", branch = "master", service = "github" }
 
-[[bin]]
-name = "palantir"
-path = "src/main.rs"
-doc = true
 
 [features]
 default = []

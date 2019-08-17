@@ -37,4 +37,7 @@ pub struct ConfigPalantir {
 
     #[serde(default = "defaults::palantir_inet")]
     pub inet: String,
+
+    #[serde(default = "defaults::palantir_workers")]
+    pub workers: usize,
 }
