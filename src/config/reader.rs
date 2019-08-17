@@ -15,7 +15,7 @@ use std::io::Read;
 use toml;
 // ------------------ bring internal functions/traits -------------------------
 use super::config::*;
-use crate::connect::appargs;
+use crate::connection::appargs;
 
 pub struct ConfigReader;
 

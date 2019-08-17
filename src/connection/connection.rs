@@ -14,7 +14,7 @@
 use std::time::Duration;
 // ------------------ bring internal functions/traits -------------------------
 use crate::proxy::proxy::PalantirProxy;
-use crate::connect::appargs;
+use crate::connection::appargs;
 
 pub fn connect_upstream(req: actix_web::HttpRequest) -> 
     impl futures::Future<Item=actix_web::HttpResponse, Error=actix_web::Error> {
